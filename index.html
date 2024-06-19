@@ -23,18 +23,20 @@
           <label class="form-check-label" for="option1">Allow numbers</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" id="option2" name="option2" value="symbols" class="form-check-input">
-            <label class="form-check-label" for="option2">Allow symbols</label>
+          <input type="checkbox" id="option2" name="option2" value="symbols" class="form-check-input">
+          <label class="form-check-label" for="option2">Add symbols</label>
         </div>
+
         <div class="form-check">
             <input type="checkbox" id="option3" name="option3" value="capsLock" class="form-check-input">
             <label class="form-check-label" for="option3">Allow big letters</label>
-        </div>
+          </div>
+
         <div class="d-flex justify-content-center">
           <button type="button" class="btn button button1 mx-2" onclick="generatePassword()">Generate</button>
           <button type="button" class="btn button button2 mx-2">Copy</button>
         </div>
-
+       
         <div class="form-group">
           <label for="generatedPassword">Your randomly generated Password:</label>
           <input type="text" id="generatedPassword" name="generatedPassword" class="form-control">
@@ -47,8 +49,13 @@
     function generatePassword() {
       var passwordLength = parseInt(document.getElementById("numberInput").value);
       var includeNumbers = document.getElementById("option1").checked;
+      var includeSymbols = document.getElementById("option2").checked;
 
-      var characterSet = "";
+      var characterSet = "abcdefghijklmnopqrstuvwxyz";
+
+      if (includeSymbols) {
+        characterSet += "!@#$%^&*()_+-=[]{};':\"\\|,.<>/?";
+      }
 
       if (includeNumbers) {
         characterSet += "0123456789";
