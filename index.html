@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Prakt_darbs_8</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 id="mainTitle">Password generator!</h1>
+    <h4 id="mainTitle">Generate your own unique password!</h4>
+
+    <div class="passwordBlock">
+      <form>
+        <div class="form-group">
+          <label for="passwordLength">Password Length:</label>
+          <input type="number" id="numberInput" name="passwordLength" class="form-control number-input" value="1" min="1">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="option1" name="option1" value="numbers" class="form-check-input">
+          <label class="form-check-label" for="option1">Allow numbers</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="option2" name="option2" value="symbols" class="form-check-input">
+          <label class="form-check-label" for="option2">Add symbols</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="option3" name="option3" value="capsLock" class="form-check-input">
+          <label class="form-check-label" for="option3">Allow big letters</label>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn button button1 mx-2" onclick="generatePassword()">Generate</button>
+          <button type="button" class="btn button button2 mx-2" onclick="copiedPassword()">Copy</button>
+        </div>
+
+        <p>Password strength: <span id="passwordStrength"></span></p>
+
+        <div class="form-group">
+          <label for="generatedPassword">Your randomly generated Password:</label>
+          <input type="text" id="generatedPassword" name="generatedPassword" class="form-control" readonly>
+        </div>
+      </form>
+    </div>
+    <br>
+    <div class="notes">
+      <h4>NOTES</h4>
+      <p>- Choose length, how long you want your password to be</p>
+      <p>- Choose what you want to add to your password</p>
+      <p>- More selected options will result in stronger password</p>
+      <p>- Click button "Generate" to generate password</p>
+      <p>- Generated password text field is non-editable</p>
+      <p>- Click button "Copy" to copy generated password</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <footer>
+    <p>Authors:</p>
+    <p>Rainers Jurkste</p>
+    <p>Artūrs Apenītis</p>
+    <p>Mārtiņš Švīgers</p>
+    <p>Dāvis Martins Lubejs</p>
+    <p><a href="https://github.com/DavelsML/Prakt_darbs_8">Link to repository</a></p>
+  </footer>
+</body>
+</html>
